@@ -9,6 +9,7 @@ public class WhileLoops {
         System.out.println(fromHereToThere(a, b));
         System.out.println(facotrs(a));
         System.out.println(countPosAndNed());
+        System.out.println(findMinAndMax());
     }
 
     public static String fromHereToThere(int a, int b) {
@@ -64,5 +65,33 @@ public class WhileLoops {
             }
         }
         return "There were "+ posCount+" positive and "+negCount+" negative numbers.";
+    }
+
+    public static String findMinAndMax(){
+        Scanner input = new Scanner(System.in);
+        int num = 0;
+        int max;
+        int min;
+        //the first round of asking
+        System.out.print("Number: ");
+        int val = input.nextInt();
+        max=val;
+        min=val;
+        while (num < 4){
+            System.out.print("Number: ");
+            val = input.nextInt();
+            if (val > max) {
+                max = val;
+            }
+            else if (val<min){
+                min = val;
+            }
+            num++;
+        }
+        return "Max value is: "+max +"\n"+"Min value is: "+min;
+    }
+
+    public static String gradePoint(){
+
     }
 }
