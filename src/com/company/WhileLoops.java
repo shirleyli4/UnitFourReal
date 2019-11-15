@@ -10,6 +10,7 @@ public class WhileLoops {
         System.out.println(facotrs(a));
         System.out.println(countPosAndNed());
         System.out.println(findMinAndMax());
+        System.out.println(gradePoint());
     }
 
     public static String fromHereToThere(int a, int b) {
@@ -92,6 +93,36 @@ public class WhileLoops {
     }
 
     public static String gradePoint(){
-
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter seven letter grades(A,B,C,D, or F)");
+        int num = 0;
+        double sum =0;
+        String a = "A";
+        String b = "B";
+        String c = "C";
+        String d = "D";
+        String f = "F";
+        String grade;
+        double val;
+        while(num<=7){
+            grade = input.nextLine();
+            if(grade.equals(a)){
+                val = 4;
+            }else if(grade.equals(b)){
+                val = 3;
+            }else if(grade.equals(c)){
+                val=2;
+            }else if(grade.equals(d)){
+                val=1;
+            }else if(grade.equals(f)){
+                val=0;
+            }else{
+                return "Invalid input";
+            }
+            sum+=val;
+            num++;
+        }
+        double gpa = (int)((sum/7+0.5)*100)/100;
+        return "GPA = "+gpa;
     }
 }
