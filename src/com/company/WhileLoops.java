@@ -7,9 +7,9 @@ public class WhileLoops {
         int a =20;
         int b=30;
         System.out.println(fromHereToThere(a, b));
-        System.out.println(facotrs(a));
-        System.out.println(countPosAndNed());
-        System.out.println(findMinAndMax());
+        System.out.println(factors(a));
+        System.out.println(countPosAndNeg());
+        System.out.println(findMindAndMax());
         System.out.println(gradePoint());
     }
 
@@ -26,7 +26,7 @@ public class WhileLoops {
        }return list;
     }
 
-    public static String facotrs(int a){
+    public static String factors(int a){
         int num = 1;
         String list ="";
         while(num<=a){
@@ -39,7 +39,7 @@ public class WhileLoops {
         }return list;
     }
 
-    public static String countPosAndNed(){
+    public static String countPosAndNeg(){
         Scanner input = new Scanner (System.in);
         int posCount=0;
         int negCount=0;
@@ -68,7 +68,7 @@ public class WhileLoops {
         return "There were "+ posCount+" positive and "+negCount+" negative numbers.";
     }
 
-    public static String findMinAndMax(){
+    public static String findMindAndMax(){
         Scanner input = new Scanner(System.in);
         int num = 0;
         int max;
@@ -92,7 +92,7 @@ public class WhileLoops {
         return "Max value is: "+max +"\n"+"Min value is: "+min;
     }
 
-    public static String gradePoint(){
+    public static double gradePoint(){
         Scanner input = new Scanner(System.in);
         System.out.println("Enter seven letter grades(A,B,C,D, or F)");
         int num = 0;
@@ -103,7 +103,7 @@ public class WhileLoops {
         String d = "D";
         String f = "F";
         String grade;
-        double val;
+        double val = 0;
         while(num<=7){
             grade = input.nextLine();
             if(grade.equals(a)){
@@ -116,13 +116,11 @@ public class WhileLoops {
                 val=1;
             }else if(grade.equals(f)){
                 val=0;
-            }else{
-                return "Invalid input";
             }
             sum+=val;
             num++;
         }
         double gpa = (int)((sum/7+0.5)*100)/100;
-        return "GPA = "+gpa;
+        return gpa;
     }
 }
