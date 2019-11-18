@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class WhileLoops {
+    static Scanner input=new Scanner(System.in);
     public static void main(String[] args) {
         int a =20;
         int b=30;
@@ -16,7 +17,7 @@ public class WhileLoops {
     public static String fromHereToThere(int a, int b) {
         String list ="";
         int num=a;
-       if(a>=b){
+       if(a>b){
            return "Invalid input";
        }else{
            while(num<=b){
@@ -36,11 +37,10 @@ public class WhileLoops {
             }else{
                 num++;
             }
-        }return list;
+        }return "The factors of "+ a+ " are: "+list;
     }
 
     public static String countPosAndNeg(){
-        Scanner input = new Scanner (System.in);
         int posCount=0;
         int negCount=0;
         System.out.print("Enter a positive or negative number or 0 to quit: ");
@@ -69,7 +69,6 @@ public class WhileLoops {
     }
 
     public static String findMindAndMax(){
-        Scanner input = new Scanner(System.in);
         int num = 0;
         int max;
         int min;
@@ -93,7 +92,6 @@ public class WhileLoops {
     }
 
     public static double gradePoint(){
-        Scanner input = new Scanner(System.in);
         System.out.println("Enter seven letter grades(A,B,C,D, or F)");
         int num = 0;
         double sum =0;
@@ -102,10 +100,9 @@ public class WhileLoops {
         String c = "C";
         String d = "D";
         String f = "F";
-        String grade;
         double val = 0;
         while(num<=7){
-            grade = input.nextLine();
+            String grade = input.nextLine();
             if(grade.equals(a)){
                 val = 4;
             }else if(grade.equals(b)){
@@ -120,7 +117,8 @@ public class WhileLoops {
             sum+=val;
             num++;
         }
-        double gpa = (int)((sum/7+0.5)*100)/100;
+        double gpa = (int)((sum/7*100)+0.5);
+        gpa/=100;
         return gpa;
     }
 }
