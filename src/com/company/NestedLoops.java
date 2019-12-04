@@ -41,7 +41,7 @@ public class NestedLoops {
     public static String flippedTriangle (int n){
         String tri="";
         for(int i=1;i<=n;i++){
-            for(int j=n;j>=1;j--){
+            for(int j=n-i+1;j>=1;j--){
                 tri+="*";
             }
             tri+="\n";
@@ -53,7 +53,11 @@ public class NestedLoops {
         String tab="";
         for(int i=1;i<=9;i++){
             for(int j=1;j<=9;j++){
-                tab+=i*j+"  ";
+                if(i*j<=9){
+                    tab+="  "+i*j;
+                }else{
+                    tab+=" "+i*j;
+                }
             }
             tab+="\n";
         }
